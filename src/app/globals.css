@@ -1,0 +1,63 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
+
+:root,
+[data-theme="light"] {
+  color-scheme: light;
+  --background: #f6f4f2;
+  --foreground: #18181b;
+  --muted: #71717a;
+  --card: #ffffff;
+  --surface: #ece9e6;
+  --border: #e0dcd7;
+  --overlay: rgb(24 24 27 / 0.45);
+  --accent: #f0718a;
+}
+
+[data-theme="dark"] {
+  color-scheme: dark;
+  --background: #09090b;
+  --foreground: #f4f4f5;
+  --muted: #a1a1aa;
+  --card: #18181b;
+  --surface: #141416;
+  --border: #27272a;
+  --overlay: rgb(0 0 0 / 0.7);
+  --accent: #f0718a;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-card: var(--card);
+  --color-surface: var(--surface);
+  --color-border: var(--border);
+  --color-overlay: var(--overlay);
+  --color-accent: var(--accent);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-geist-sans), system-ui, sans-serif;
+}
+
+input,
+select,
+textarea {
+  font-size: 1rem;
+}
+
+button,
+a,
+[role="button"] {
+  touch-action: manipulation;
+}
+
+input[type="file"]::file-selector-button {
+  display: none;
+}
