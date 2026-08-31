@@ -6,7 +6,7 @@ export function getEnv() {
       process.env.SESSION_SECRET?.trim() ||
       process.env.ADMIN_PASSWORD?.trim() ||
       "dev-insecure-secret",
-    appUrl: (process.env.APP_URL ?? "http://localhost").replace(/\/$/, ""),
+    appUrl: (process.env.APP_URL ?? "http://localhost:3000").replace(/\/$/, ""),
     maxUploadMb: Number.isFinite(maxUploadMb) && maxUploadMb > 0 ? maxUploadMb : 2048,
     ffmpegPath: process.env.FFMPEG_PATH,
   };
